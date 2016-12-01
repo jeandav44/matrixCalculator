@@ -1,0 +1,5 @@
+* { clear: both; margin: 5px; padding: 5px; }
+ul {
+    list-style-type: none;
+    display: list-item;
+}

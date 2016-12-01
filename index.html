@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="DAWM6DateCalculatorApp" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <!-- <link href="css/index.css" rel="stylesheet" type="text/css"/> -->
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
+  <!--Frameworks-->
+  <!--JQuery-->
+  <script src="js/frameworks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+  <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript" xml:space="preserve"></script>-->
+
+  <!--Angular-->
+  <script src="js/frameworks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/frameworks/angular/i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="js/frameworks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!--Own code-->
+  <script src="js/control/index.js" type="text/javascript" xml:space="preserve"></script>
+  <title>DAWM6DateCalculator</title>
+</head>
+<body>
+  <div ng-controller="DAWM6DateCalculatorController as DateCalculatorCtrl" id="main">
+    <nav>
+      <ul>
+        <li><a ng-click="action='add'" href="#">Add</a></li>
+        <li><a ng-click="action='substract'" href="#">Substract</a></li>
+        <li><a ng-click="action='weekDay'" href="#">Day of the week</a></li>
+        <li><a ng-click="action='daysUntilToday'" href="#">Days until today</a></li>
+      </ul>
+    </nav>
+
+    <div ng-show="action!='init'" id="options">
+      <h1> DAWM6DateCalculator: {{actionNames[action]}}</h1>
+
+      <div>
+        <label>Number of dates: </label>
+        <input type="number" required step="1" placeholder="Number of dates"/><br><br>
+      </div>
+
+      <div ng-show="action=='add'||action=='substract'">
+        <label>Days to {{action}}: </label>
+        <input min="0" type="number" required step="1" placeholder="Days to sum"/><br><br>
+      </div>
+
+      <button ng-click="DateCalculatorCtrl.generatePopUp()">Generate!</button>
+    </div>
+
+    <!-- <div>
+    <button>Sum {{dpController.numberoperation}} days to all dates!</button>
+  </div> -->
+
+  <div id="result">
+  </div>
+</div>
+</body>
+</html>
