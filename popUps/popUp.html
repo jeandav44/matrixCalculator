@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="PopUpApp" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <!-- <link href="css/index.css" rel="stylesheet" type="text/css"/> -->
+  <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+  <!--Frameworks-->
+  <!--JQuery-->
+  <script src="../js/frameworks/jQuery/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+  <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript" xml:space="preserve"></script>-->
+
+  <!--Angular-->
+  <script src="../js/frameworks/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../js/frameworks/angular/i18n/angular-locale_es-es.js" type="text/javascript" xml:space="preserve"></script>
+  <script src="../js/frameworks/angular/ng-currency.js" type="text/javascript" xml:space="preserve"></script>
+
+  <!--Own code-->
+  <script src="../js/control/popUp.js" type="text/javascript" xml:space="preserve"></script>
+  <title>DAWM6DateCalculator</title>
+</head>
+<body>
+  <div ng-controller="PopUpController as PopUpCtrl" ng-init="PopUpCtrl.loadData()" id="popUp">
+      <pop-up-template></pop-up-template>
+  </div>
+</body>
+</html>

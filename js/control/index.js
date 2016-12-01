@@ -11,7 +11,8 @@ $(document).ready(function () {
 
   app.controller("DAWM6DateCalculatorController", function($scope) {
     // Properties
-
+    this.numberOfDates;
+    this.numberOfDays;
     // Scope variables
     $scope.action = "init";
     $scope.actionNames = {"add": "Add",
@@ -20,8 +21,17 @@ $(document).ready(function () {
                           "daysUntilToday": "Days until today"};
     // Methods
 
+
     this.generatePopUp = function () {
-      // Validate
+      // TODO validate
+      /* var hasError = false;
+        if (isNaN(this.numberOfDates)
+          || this.numberOfDates == ""
+          || this.numberOfDates <= 0) {
+          hasError = true;
+      } */
+
+      window.open("popUps/popUp.html");
     };
   });
 

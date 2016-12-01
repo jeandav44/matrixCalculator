@@ -1,0 +1,8 @@
+<h1>The operation is: {{actionNames[action]}}</h1>
+
+<div ng-repeat="i in nFields" >
+  <label>Date number {{$index+1}}: </label>
+  <input ng-model="PopUpCtrl.dates[$index]" type="text" placeholder="YYYY/MM/DD" />
+</div>
+
+<button ng-click="PopUpCtrl.calculateDates()">Calculate</button>

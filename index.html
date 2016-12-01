@@ -35,12 +35,12 @@
 
       <div>
         <label>Number of dates: </label>
-        <input type="number" required step="1" placeholder="Number of dates"/><br><br>
+        <input id="numberOfDates" ng-model="DateCalculatorCtrl.numberOfDates" type="number" required step="1" placeholder="Number of dates"/><br><br>
       </div>
 
       <div ng-show="action=='add'||action=='substract'">
-        <label>Days to {{action}}: </label>
-        <input min="0" type="number" required step="1" placeholder="Days to sum"/><br><br>
+        <label>Days to <span id="action">{{action}}</span>: </label>
+        <input id="numberOfDays" ng-model="DateCalculatorCtrl.numberOfDays" min="0" type="number" required step="1" placeholder="Days to sum"/><br><br>
       </div>
 
       <button ng-click="DateCalculatorCtrl.generatePopUp()">Generate!</button>
