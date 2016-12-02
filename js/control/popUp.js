@@ -23,8 +23,8 @@ $(document).ready(function () {
                           "daysUntilToday": "Days until today"};
     // Methods
     this.loadData = function () {
-      this.numberOfDates = window.opener.$("#numberOfDates").val();
-      this.numberOfDays = window.opener.$("#numberOfDays").val();
+      this.numberOfDates = parseInt(window.opener.$("#numberOfDates").val());
+      this.numberOfDays = parseInt(window.opener.$("#numberOfDays").val());
       $scope.action = window.opener.$("#action").text();
 
       for (var i = 0; i < this.numberOfDates; i++) {
@@ -38,11 +38,26 @@ $(document).ready(function () {
       // TODO
       // validate dates
       // calculate
-      alert("Calculate");
+      var hasError = false;
+      var formatedDates = [], resultDates = [];
+
+      for (var i = 0; i < this.dates.length; i++) {
+        $("#dateField"+i).addClass("ng-valid").removeClass("ng-invalid");
+
+        // Validate all dates
+        if (isNotDate(this.dates[i])) { // There is an error
+          hasError = true;
+          $("#dateField"+i).addClass("ng-invalid").removeClass("ng-valid");
+        } else {
+          formatedDates.push(new Date(this.dates[i]));
+        }
+      }
+
+      if (!hasError) {
+        resultDates = applyOperationToDates($scope.action, formatedDates, this.numberOfDays);
+        window.opener.$("#result").html(resultDates.toString());
+      }
     };
-
-
-
   });
 
   // Normally you use directives to create tags
@@ -57,6 +72,5 @@ $(document).ready(function () {
 		  controllerAs: 'popUpTemplate' // This is the alias of the directive
 		};
   });
-
 
 })();
