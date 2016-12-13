@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DAWM6DateCalculatorApp" xmlns="http://www.w3.org/1999/html">
+<html ng-app="MatrixCalculatorApp" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <!-- <link href="css/index.css" rel="stylesheet" type="text/css"/> -->
@@ -20,35 +20,20 @@
   <title>DAWM6DateCalculator</title>
 </head>
 <body>
-  <div ng-controller="DAWM6DateCalculatorController as DateCalculatorCtrl" id="main">
+  <div ng-controller="MatrixCalculatorController as MatrixCalculatorCtrl" id="main">
     <nav>
       <ul>
-        <li><a ng-click="action='add'" href="#">Add</a></li>
-        <li><a ng-click="action='substract'" href="#">Substract</a></li>
-        <li><a ng-click="action='weekDay'" href="#">Day of the week</a></li>
-        <li><a ng-click="action='daysUntilToday'" href="#">Days until today</a></li>
+        <li><a ng-click="action='add'" href="#">Add two matrix</a></li>
+        <li><a ng-click="action='multiply'" href="#">Multiply two matrix</a></li>
+        <li><a ng-click="action='substract'" href="#">Substract two matrix</a></li>
       </ul>
     </nav>
 
     <div ng-show="action!='init'" id="options">
-      <h1> DAWM6DateCalculator: {{actionNames[action]}}</h1>
-
-      <div>
-        <label>Number of dates: </label>
-        <input id="numberOfDates" ng-model="DateCalculatorCtrl.numberOfDates" type="number" required step="1" placeholder="Number of dates"/><br><br>
-      </div>
-
-      <div ng-show="action=='add'||action=='substract'">
-        <label>Days to <span id="action">{{action}}</span>: </label>
-        <input id="numberOfDays" ng-model="DateCalculatorCtrl.numberOfDays" min="0" type="number" required step="1" placeholder="Days to sum"/><br><br>
-      </div>
-
-      <button ng-click="DateCalculatorCtrl.generatePopUp()">Generate!</button>
+      <h1> Operation is : {{actionNames[action]}}</h1>
+        <label>Matrix rows and cols number: </label>
+        <input type="text" ng-model="MatrixCalculatorCtrl.sizeMatrix" />
     </div>
-
-    <!-- <div>
-    <button>Sum {{dpController.numberoperation}} days to all dates!</button>
-  </div> -->
 
   <div id="result">
   </div>

@@ -7,18 +7,17 @@ $(document).ready(function () {
 /* (function(){ // write your code here })(); */
 (function(){
   // This is the instance of our angular app
-  var app = angular.module("DAWM6DateCalculatorApp", []);
+  var app = angular.module("MatrixCalculatorApp", []);
 
-  app.controller("DAWM6DateCalculatorController", function($scope) {
+  app.controller("MatrixCalculatorController", function($scope) {
     // Properties
-    this.numberOfDates;
-    this.numberOfDays;
+    this.sizeMatrix;
+    this.rangeMatrix;
     // Scope variables
     $scope.action = "init";
-    $scope.actionNames = {"add": "Add",
-                          "substract": "Substract",
-                          "weekDay": "Days of the week",
-                          "daysUntilToday": "Days until today"};
+    $scope.actionNames = {"add": "+",
+                          "substract": "-",
+                          "multiply": "*"};
     // Methods
 
 
