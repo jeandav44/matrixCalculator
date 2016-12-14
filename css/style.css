@@ -8,7 +8,7 @@ li { float: left;  }
 li a {
     display: block;
 }
-
+/*
 .ng-valid {
     border-color: green;
 }
@@ -16,3 +16,4 @@ li a {
 .ng-invalid {
     border-color: red;
 }
+*/

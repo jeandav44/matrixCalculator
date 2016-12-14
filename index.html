@@ -23,16 +23,19 @@
   <div ng-controller="MatrixCalculatorController as MatrixCalculatorCtrl" id="main">
     <nav>
       <ul>
-        <li><a ng-click="action='add'" href="#">Add two matrix</a></li>
-        <li><a ng-click="action='multiply'" href="#">Multiply two matrix</a></li>
-        <li><a ng-click="action='substract'" href="#">Substract two matrix</a></li>
-      </ul>
+    <a ng-click="action='add'" href="#">Add two matrix</a>
+    <a ng-click="action='multiply'" href="#">Multiply two matrix</a>
+    <a ng-click="action='substract'" href="#">Substract two matrix</a>
     </nav>
 
     <div ng-show="action!='init'" id="options">
       <h1> Operation is : {{actionNames[action]}}</h1>
         <label>Matrix rows and cols number: </label>
-        <input type="text" ng-model="MatrixCalculatorCtrl.sizeMatrix" />
+        <input type="text" ng-model="MatrixCalculatorCtrl.sizeMatrix" /><br/>
+        <label>Range of the matrix: </label>
+        <input type="text" ng-model="MatrixCalculatorCtrl.rangeMatrix" /><br/>
+        <input type="submit" value="Genarate" ng-click="MatrixCalculatorCtrl.generateMatrix()"/> 
+        <p> {{MatrixCalculatorCtrl.sizeMatrix}}  {{MatrixCalculatorCtrl.rangeMatrix}}</p>
     </div>
 
   <div id="result">

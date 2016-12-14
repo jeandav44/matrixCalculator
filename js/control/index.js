@@ -32,6 +32,18 @@ $(document).ready(function () {
 
       window.open("popUps/popUp.html");
     };
-  });
 
+    this.generateMatrix = function (){
+      if(!isNaN(this.sizeMatrix) && !isNaN(this.rangeMatrix)){
+          alert("bien");
+        }
+      else{
+        alert("malo");
+      }
+
+    };
+
+
+
+  });
 })();
