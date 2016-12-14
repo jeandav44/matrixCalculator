@@ -35,10 +35,13 @@ $(document).ready(function () {
 
     this.generateMatrix = function (){
       if(!isNaN(this.sizeMatrix) && !isNaN(this.rangeMatrix)){
-          alert("bien");
+
+          $("#rows").parent().removeClass('has-error');
+
         }
       else{
-        alert("malo");
+
+        $("#rows").parent().addClass('has-error');
       }
 
     };

@@ -30,11 +30,14 @@
 
     <div ng-show="action!='init'" id="options">
       <h1> Operation is : {{actionNames[action]}}</h1>
+        <div>
         <label>Matrix rows and cols number: </label>
-        <input type="text" ng-model="MatrixCalculatorCtrl.sizeMatrix" /><br/>
+        <input id="rows" type="text" ng-model="MatrixCalculatorCtrl.sizeMatrix" /><br/>
+      </div>
         <label>Range of the matrix: </label>
-        <input type="text" ng-model="MatrixCalculatorCtrl.rangeMatrix" /><br/>
-        <input type="submit" value="Genarate" ng-click="MatrixCalculatorCtrl.generateMatrix()"/> 
+        <input id="range" type="text" ng-model="MatrixCalculatorCtrl.rangeMatrix" /><br/>
+        <input type="submit" value="Genarate" ng-click="MatrixCalculatorCtrl.generateMatrix()"/>
+
         <p> {{MatrixCalculatorCtrl.sizeMatrix}}  {{MatrixCalculatorCtrl.rangeMatrix}}</p>
     </div>
 
