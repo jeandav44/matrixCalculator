@@ -37,11 +37,9 @@
         <label>Range of the matrix: </label>
         <input id="range" type="text" ng-model="MatrixCalculatorCtrl.rangeMatrix" /><br/>
         <input type="submit" value="Genarate" ng-click="MatrixCalculatorCtrl.generateMatrix()"/>
-
-        <p> {{MatrixCalculatorCtrl.sizeMatrix}}  {{MatrixCalculatorCtrl.rangeMatrix}}</p>
     </div>
-
-  <div id="result">
+  <div id="result" ng-if="validated==1">
+    <matrix-template></matrix-template>
   </div>
 </div>
 </body>

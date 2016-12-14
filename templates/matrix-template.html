@@ -1,0 +1,9 @@
+<table>
+  <tr ng-repeat="i in sizeM">
+      <td  ng-repeat="j in sizeM">
+        <select>
+            <option ng-repeat = "k in rangeM" value="{{$index}}">{{$index}}</option>
+        </select>
+      </td>
+  </tr>
+</table>

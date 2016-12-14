@@ -14,10 +14,14 @@ $(document).ready(function () {
     this.sizeMatrix;
     this.rangeMatrix;
     // Scope variables
+
+    $scope.validated =0;
     $scope.action = "init";
     $scope.actionNames = {"add": "+",
                           "substract": "-",
                           "multiply": "*"};
+    $scope.sizeM=[];
+    $scope.rangeM=[];
     // Methods
 
 
@@ -34,19 +38,54 @@ $(document).ready(function () {
     };
 
     this.generateMatrix = function (){
-      if(!isNaN(this.sizeMatrix) && !isNaN(this.rangeMatrix)){
-
-          $("#rows").parent().removeClass('has-error');
-
+      $scope.validated=0;
+      var flag=true;
+      if(!isNaN(this.sizeMatrix)){
+          $("#rows").removeClass("invalid").addClass("valid");
         }
       else{
-
-        $("#rows").parent().addClass('has-error');
+        $("#rows").removeClass("valid").addClass("invalid");
+        flag=false;
       }
 
+      if(!isNaN(this.rangeMatrix)){
+          $("#range").removeClass("invalid").addClass("valid");
+        }
+      else{
+        $("#range").removeClass("valid").addClass("invalid");
+        flag=false;
+      }
+
+        if(flag){
+          $scope.sizeM=[];
+          $scope.rangeM=[];
+          $scope.validated=1;
+          for (var i = 0; i < this.sizeMatrix; i++) {
+              $scope.sizeM.push(i);
+            }
+          for (var i = 0; i < this.rangeMatrix; i++) {
+                $scope.rangeM.push(i);
+            }
+
+        }
     };
 
 
 
+
+
+
   });
+
+  app.directive("matrixTemplate", function () {
+		return {
+		  restrict: 'E', // type of directive
+		  templateUrl:"templates/matrix-template.html",
+		  controller: function() {
+        // When the document is ready execute this code
+		  },
+		  controllerAs: 'matrixTemplate' // This is the alias of the directive
+		};
+  });
+
 })();
