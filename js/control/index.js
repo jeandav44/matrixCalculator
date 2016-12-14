@@ -70,11 +70,6 @@ $(document).ready(function () {
         }
     };
 
-
-
-
-
-
   });
 
   app.directive("matrixTemplate", function () {
@@ -86,6 +81,18 @@ $(document).ready(function () {
 		  },
 		  controllerAs: 'matrixTemplate' // This is the alias of the directive
 		};
+  });
+
+
+  app.directive("matrixTemplateS", function () {
+    return {
+      restrict: 'E', // type of directive
+      templateUrl:"templates/matrix-template-s.html",
+      controller: function() {
+        // When the document is ready execute this code
+      },
+      controllerAs: 'matrixTemplateS' // This is the alias of the directive
+    };
   });
 
 })();
