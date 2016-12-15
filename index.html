@@ -39,8 +39,12 @@
         <input type="submit" value="Genarate" ng-click="MatrixCalculatorCtrl.generateMatrix()"/>
     </div>
   <div id="result" ng-if="validated==1">
-    <matrix-template></matrix-template>
+    <label>matrix 1</label>
+    <matrix-template></matrix-template><br/>
+    <label>matrix 2</label>
+    <matrix-template-s></matrix-template-s><br/>
   </div>
+    <input type="submit" value="trial" ng-click="MatrixCalculatorCtrl.trial1()"/>
 </div>
 </body>
 </html>

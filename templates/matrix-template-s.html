@@ -1,0 +1,9 @@
+<table>
+  <tr ng-repeat="i in sizeM">
+      <td  ng-repeat="j in sizeM">
+        <select ng-model="matrix2[$parent.$index][$index]">
+            <option ng-repeat = "k in rangeM" value="{{$index}}" selected="1">{{$index}}</option>
+        </select>
+      </td>
+  </tr>
+</table>

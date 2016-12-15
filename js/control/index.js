@@ -14,6 +14,7 @@ $(document).ready(function () {
     this.sizeMatrix;
     this.rangeMatrix;
     // Scope variables
+    //trial code
 
     $scope.validated =0;
     $scope.action = "init";
@@ -22,6 +23,10 @@ $(document).ready(function () {
                           "multiply": "*"};
     $scope.sizeM=[];
     $scope.rangeM=[];
+
+    //matrix
+    $scope.matrix1=[[]];
+    $scope.matrix2=[[]];
     // Methods
 
 
@@ -40,7 +45,7 @@ $(document).ready(function () {
     this.generateMatrix = function (){
       $scope.validated=0;
       var flag=true;
-      if(!isNaN(this.sizeMatrix)){
+      if(!isNaN(this.sizeMatrix) && this.sizeMatrix>0 ){
           $("#rows").removeClass("invalid").addClass("valid");
         }
       else{
@@ -48,7 +53,7 @@ $(document).ready(function () {
         flag=false;
       }
 
-      if(!isNaN(this.rangeMatrix)){
+      if(!isNaN(this.rangeMatrix) && this.rangeMatrix>1){
           $("#range").removeClass("invalid").addClass("valid");
         }
       else{
@@ -57,6 +62,7 @@ $(document).ready(function () {
       }
 
         if(flag){
+
           $scope.sizeM=[];
           $scope.rangeM=[];
           $scope.validated=1;
@@ -68,7 +74,13 @@ $(document).ready(function () {
             }
 
         }
+
     };
+
+    this.trial1 = function (){
+       alert($scope.matrix2[0][1]);
+    };
+
 
   });
 
