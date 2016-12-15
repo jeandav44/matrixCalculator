@@ -44,9 +44,13 @@
     <label>matrix 2</label>
     <matrix-template-s></matrix-template-s><br/>
 
+    <div id="result" ng-show="action=='show'">
+      <matrix-result> </matrix-result>
+    </div>
+
     <input type="submit" value="Calculate" ng-click="MatrixCalculatorCtrl.validate()"/>
   </div>
-    <input type="submit" value="trial" ng-click="MatrixCalculatorCtrl.trial1()"/>
+
 </div>
 </body>
 </html>

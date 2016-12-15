@@ -27,6 +27,9 @@ $(document).ready(function () {
     //matrix
     $scope.matrix1=[[]];
     $scope.matrix2=[[]];
+
+    $scope.row=[];
+    $scope.result=[];
     // Methods
 
 
@@ -112,7 +115,20 @@ $(document).ready(function () {
     };
 
     this.calculate = function(){
-      alert("todo");
+      $scope.result=[];
+      if($scope.action=="add")
+        {
+          for (var i = 0; i <this.sizeMatrix; i++) {
+              $scope.row=[];
+            for (var j = 0; j <this.sizeMatrix; j++) {
+                //$scope.row.push((parseInt($scope.matrix1[j][i])+parseInt($scope.matrix2[j][i])));
+                $scope.row.push((parseInt($scope.matrix1[i][j])+parseInt($scope.matrix2[i][j])));
+              }
+              $scope.result.push($scope.row);
+         }
+       }
+
+       window.open("popUps/popUp.html");
     };
 
   });
@@ -140,15 +156,17 @@ $(document).ready(function () {
     };
   });
 
-  app.directive("matrixInit", function () {
+  app.directive("matrixResult", function () {
     return {
       restrict: 'E', // type of directive
-      templateUrl:"templates/matrix-init.html",
+      templateUrl:"templates/matrix-result.html",
       controller: function() {
         // When the document is ready execute this code
       },
-      controllerAs: 'matrixInit' // This is the alias of the directive
+      controllerAs: 'matrixResult' // This is the alias of the directive
     };
   });
+
+
 
 })();
