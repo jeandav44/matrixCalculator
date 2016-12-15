@@ -128,6 +128,34 @@ $(document).ready(function () {
          }
        }
 
+       else if($scope.action=="substract")
+         {
+           for (var i = 0; i <this.sizeMatrix; i++) {
+               $scope.row=[];
+             for (var j = 0; j <this.sizeMatrix; j++) {
+                 //$scope.row.push((parseInt($scope.matrix1[j][i])+parseInt($scope.matrix2[j][i])));
+                 $scope.row.push((parseInt($scope.matrix1[i][j])-parseInt($scope.matrix2[i][j])));
+               }
+               $scope.result.push($scope.row);
+          }
+        }
+
+        //TODO
+        else if ($scope.action=="multiply") {
+          for (var i = 0; i < this.sizeMatrix; i++) {
+            for (var j = 0; j < this.sizeMatrix; j++) {
+                $scope.row=[];
+              for (var k = 0; k <this.sizeMatrix ; k++) {
+                  $scope.row.push((parseInt($scope.matrix1[i][k])*parseInt($scope.matrix2[k][j])));
+              }
+              $scope.result.push($scope.row);
+            }
+          }
+        }
+
+
+
+
        window.open("popUps/popUp.html");
     };
 
